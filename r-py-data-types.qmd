@@ -5,6 +5,11 @@ editor: visual
 ---
 
 ```{r}
+
+```
+
+
+```{r}
 dogs <- c("teddy","khora","waffle", "banjo")
 class(dogs)
 typeof(dogs)
@@ -67,8 +72,21 @@ dog_food[2]
 ```{r}
 dog_food["khora"]
 dog_food[1:3]
-```
 
+#for loop
+i <- 1
+dog_food[i]
+#key pointsL
+#index by position
+  #define positions with variables
+  
+```
+#overwritting data
+
+```{r}
+dog_food[1] <- "Burritos!"
+dog_food```
+```
 #Create vectors of car colors observed
 
 ```{r}
@@ -87,7 +105,7 @@ cars[2:4]
 
 #warm up to for loops
 ```{r}
-i <- 4
+i <- 1
 cars[i]
 
 ```
@@ -115,6 +133,12 @@ typeof(fish_size)
 ```{r}
 class(fish_size) #returns matrix / array
 ```
+```{r}
+fish_size[1,2]
+fish_size[,2]
+fish_size[1,]
+```
+
 
 ```{r}
 dog_walk <- matrix(c("teddy", 5, "khora", 10), ncol = 2, nrow = 2, byrow = FALSE)
@@ -161,20 +185,28 @@ whale_travel[,1]
 #what happens if we give a matrix with one element? THats the position in the matric as if populated by column
 whale_travel[3]
 ```
+
+
+
+
 # Lists
 
 ```{r}
-urchins <- list("blue", c(1,2,3), c("a cat", "a dog"), 5L)
+urchins <- list("blue",
+                c(1,2,3), 
+                c("a cat", "a dog"), 
+                5L)
 urchins
 ```
-#Accessing pieces ofd a list
-
-```{r}
-urchins[[2]]
-```
-#compare that to:
+#Accessing pieces of a list
+#indexing into vector
 ```{r}
 urchins[2]
+```
+#compare that to:
+#indexing into the elements of vectors
+```{r}
+urchins[[2]]
 ```
 #Naming list items?
 
@@ -202,6 +234,8 @@ fruit
 ```
 
 ```{r}
+#indexing the data frame 
+# row then column
 fruit[1,2]
 ```
 
@@ -217,9 +251,86 @@ fruit
 
 # Making & Indexing data in Python
 #in diff file (python)
+
+
+# select multiple elements
+
+```{r}
+
+
+
+x <- 1:10
+x[c(3,1,5)]
+x[c(1,1,1)]
+x[c(1.2,5.4,7.2)]
+
+#exclude elements
+#using the position
+
+#exclyde elements with negative integers
+x[-10]
+
+x[-c(2,4,6,8,10)]
+
+#cant mix positive and negative numbers
+
+x[c(1,2)]
+
+#logical vectors
+x[c(TRUE, FALSE, FALSE, TRUE, FALSE, TRUE,TRUE, FALSE, FALSE, TRUE)]
+
+x[x > 3]
+
+x[]
+
+x[0]
+
+#subsetting and assinging multiple values
+x <- 1:5
+x[c(1,2)] <-2:3
+
+x
+
+x[-1] <- 4:1
+
+x
+
+
+#subset rows in data frames based on conditions (logical subsetting
+
+
+
+
+
 ```
 
+mtcars[mtcars$gear == 5, ]
 
+mtcars[mtcars$gear == 5 & mtcars$cyl == 4, ]
+
+
+subset(mtcars, gear == 5)
+subset(mtcars, gear == 5 & cyl == 4)
+
+# Remove columns
+```{r}
+df <- data.frame(x = 1:3,
+                  y = 3:1,
+                z = c("a","b","c"))
+df$z <- NULL
+
+df[c("x", "y")]
+
+df
+
+
+
+setdiff(names(df), "z")
+
+df[setdiff(names(df), "z")]
+
+
+```
 
 
 
