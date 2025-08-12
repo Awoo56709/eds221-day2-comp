@@ -1,0 +1,237 @@
+---
+title: "r-py-data-types"
+format: html
+editor: visual
+---
+
+```{r}
+dogs <- c("teddy","khora","waffle", "banjo")
+class(dogs)
+typeof(dogs)
+```
+#numeric vector
+```{r}
+weights <- c(50,55,25,35)
+typeof(weights)
+class(weights)
+```
+#integer vector
+```{r}
+dog_age <- c(5L,6L,1L,7L)
+typeof(dog_age)
+class(dog_age)
+is.numeric(dog_age)
+
+```
+#check with a logical
+```{r}
+
+is.numeric(dog_age)
+```
+#combining classes
+```{r}
+dog_info <- c("teddy", 50, 5L)
+dog_info
+class(dog_info)
+```
+
+```{r}
+typeof(dog_info)
+class(dog_info)
+is.character(dog_info)
+```
+```{r}
+#named elements
+dog_food <- c(teddy = "purina", 
+              khora = "alpo", 
+              waffle = "feast", 
+              banjo = "blue diamond")
+dog_food
+```
+
+
+```{r}
+class(dog_food)
+```
+
+```{r}
+typeof(dog_food)
+```
+
+
+```{r}
+#indexing and getting vectors
+dog_food[2]
+```
+
+```{r}
+dog_food["khora"]
+dog_food[1:3]
+```
+
+#Create vectors of car colors observed
+
+```{r}
+cars <- c("red", "orange", "white", "blue", "green", "silver", "black")
+#access the 5th element
+
+cars[5]
+```
+
+# Access elements 2 - 4
+
+```{r}
+cars[2:4]
+```
+
+
+#warm up to for loops
+```{r}
+i <- 4
+cars[i]
+
+```
+```{r}
+i <- seq(1:3)
+cars[i]
+```
+#updating the elements of a vector directly (mutable)
+
+```{r}
+cars[3] <- "BURRITOS"
+cars
+```
+#Matrices
+
+
+```{r}
+fish_size <- matrix(c(0.8, 1.2,0.4,0.9), ncol = 2, nrow = 2, byrow = FALSE)
+fish_size
+```
+
+```{r}
+typeof(fish_size)
+```
+```{r}
+class(fish_size) #returns matrix / array
+```
+
+```{r}
+dog_walk <- matrix(c("teddy", 5, "khora", 10), ncol = 2, nrow = 2, byrow = FALSE)
+dog_walk
+```
+```{r}
+class(dog_walk)
+typeof(dog_walk)
+```
+
+# Accessing pieces of matrices
+
+```{r}
+ whale_travel <- matrix(data = c(31.8,1348, 46.9, 1587), nrow = 2, ncol = 2, byrow = TRUE)
+#take a look
+
+whale_travel
+```
+
+#Accessing pieces of matrices
+
+```{r}
+ whale_travel <- matrix(data = c(31.8,1348, 46.9, 1587), nrow = 2, ncol = 2, byrow = TRUE)
+
+#take a look
+whale_travel
+```
+
+#Access value 1348
+
+```{r}
+whale_travel[1,2] # row1, col 2
+```
+```{r}
+whale_travel[2, ]
+```
+
+
+```{r}
+whale_travel[,1]
+```
+
+```{r}
+#what happens if we give a matrix with one element? THats the position in the matric as if populated by column
+whale_travel[3]
+```
+# Lists
+
+```{r}
+urchins <- list("blue", c(1,2,3), c("a cat", "a dog"), 5L)
+urchins
+```
+#Accessing pieces ofd a list
+
+```{r}
+urchins[[2]]
+```
+#compare that to:
+```{r}
+urchins[2]
+```
+#Naming list items?
+
+```{r}
+tacos <- list(topping = c("onion", "cilantro", "guacamole"), filling = c("beans", "meat", "veggie"), price = c(6.75, 8.25, 9.50))
+
+#the whole thing
+tacos
+```
+```{r}
+#just get one piece of it:
+tacos[[2]]
+
+
+#or the same thing
+tacos$filling
+```
+
+```{r}
+# Create a dataframe
+fruit <- data.frame(type = c("apple", "banana", "peach"), mass = c(130, 195, 150))
+
+#look at it
+fruit
+```
+
+```{r}
+fruit[1,2]
+```
+
+```{r}
+fruit[3,1]
+```
+
+```{r}
+#changing the value of column 1, row 2
+fruit[2,1] <- "pineapple"
+fruit
+```
+
+# Making & Indexing data in Python
+#in diff file (python)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
